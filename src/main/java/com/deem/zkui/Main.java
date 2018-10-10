@@ -22,6 +22,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.Date;
 import java.util.Properties;
+
+import org.apache.log4j.BasicConfigurator;
 import org.eclipse.jetty.annotations.AnnotationConfiguration;
 import org.eclipse.jetty.http.HttpVersion;
 import org.eclipse.jetty.server.Connector;
@@ -46,7 +48,7 @@ public class Main {
     private final static org.slf4j.Logger logger = LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args) throws Exception {
-
+        BasicConfigurator.configure();
         logger.debug("Starting ZKUI!");
         Properties globalProps = new Properties();
         File f = new File("config.cfg");
